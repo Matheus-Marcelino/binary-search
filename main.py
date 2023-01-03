@@ -34,3 +34,11 @@ def busca_binaria(vetor: tuple | list, pos_init: int, pos_final: int, x: int) ->
             return meio
 
     return -1
+
+
+
+@time_func
+def procura_for(vetor: list, x: int) -> int:
+    for c in vetor:
+        if c == x:
+            return c
