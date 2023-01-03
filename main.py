@@ -22,6 +22,7 @@ def busca_binaria(vetor: tuple | list, pos_init: int, pos_final: int, x: int) ->
         :vetor: Lista ou tupla
         :pos_init: Posição inicial do vetor
         :pos_final: Posição final do vetor
+        :x: Valor que você deseja achar
     """
     if pos_init <= pos_final:
         meio = (pos_init + pos_final) // 2
@@ -38,6 +39,7 @@ def busca_binaria(vetor: tuple | list, pos_init: int, pos_final: int, x: int) ->
 
 @time_func
 def procura_for(vetor: list, x: int) -> int:
+    """Procura simples usando o for"""
     for c in vetor:
         if c == x:
             return c
