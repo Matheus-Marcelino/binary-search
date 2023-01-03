@@ -36,9 +36,15 @@ def busca_binaria(vetor: tuple | list, pos_init: int, pos_final: int, x: int) ->
     return -1
 
 
-
 @time_func
 def procura_for(vetor: list, x: int) -> int:
     for c in vetor:
         if c == x:
             return c
+
+
+lista = list(range(0, 100000001))
+
+print(busca_binaria(lista, 0, len(lista)-1, 100000001))
+
+print(procura_for(lista, 1000000))
