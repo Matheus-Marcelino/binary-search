@@ -13,3 +13,24 @@ def time_func(func):
         print(f'{func.__name__} demorou {time_total.total_seconds():.2f} segundos.')
         return resultado
     return wrapper
+
+
+@time_func
+def busca_binaria(vetor: tuple | list, pos_init: int, pos_final: int, x: int) -> int:
+    """Busca otimizada em um vetor
+        -> Funciona apenas para vetores organizados
+        :vetor: Lista ou tupla
+        :pos_init: Posição inicial do vetor
+        :pos_final: Posição final do vetor
+    """
+    if pos_init <= pos_final:
+        meio = (pos_init + pos_final) // 2
+
+        if x > vetor[meio]:
+            return busca_binaria(vetor, meio+1, pos_final, x)
+        elif x < vetor[meio]:
+            return busca_binaria(vetor, pos_init, meio-1, x)
+        else:
+            return meio
+
+    return -1
